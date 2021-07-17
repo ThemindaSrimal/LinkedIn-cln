@@ -5,7 +5,6 @@
   justify-content: space-evenly;
   border-bottom: 0.1px solid lightgray;
   padding-top: 10px;
-  padding-bottom: 10px;
   width: 100%;
   z-index: 999;
 }
@@ -28,6 +27,11 @@
   color: gray;
   background-color: #eef3f8;
   height: 40px;
+  width: 200px;
+}
+
+.header__search > ::placeholder {
+  font-size: 18px;
 }
 
 .header__search > input {
