@@ -20,7 +20,7 @@ const Login = () => {
             dispatch(login({
                 email: userAuth.user.email,
                 uid: userAuth.user.uid,
-                displayeName: userAuth.user.displayName,
+                displayName: userAuth.user.displayName,
                 profileUrl: userAuth.user.photoeURL,
             }))
         }).catch(error => alert(error));    
@@ -34,14 +34,14 @@ const Login = () => {
         auth.createUserWithEmailAndPassword(email, password)
         .then((userAuth) => {
             userAuth.user.updateProfile({
-                displayeName : name,
+                displayName : name,
                 photoURL : profilePic,
             })
             .then(()=>{
                 dispatch(login({
                    email: userAuth.user.email,
                    uid: userAuth.user.uid,
-                   displayeName: name,
+                   displayName: name,
                    photoURL:  profilePic, 
                 }));
             
