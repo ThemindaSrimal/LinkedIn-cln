@@ -27,7 +27,12 @@ function Widgets() {
                 <h2>LinkedIn News</h2>
                 <InfoIcon />
             </div>
-            {newsArticle('TS','React')}
+            {newsArticle('Tesla profit surge driven by record car deliveries','Top news - 7896 readers')}
+            {newsArticle('Key obtained to unlock files from cyber attack','Top news - 6456 readers')}
+            {newsArticle('Pricey printer ink more expensive than champagne','Tech - 5643 readers')}
+            {newsArticle('Face palm: The fight to get a new emoji made','Social - 3563 readers')}
+            {newsArticle('Why remote working leaves us vulnerable to hacks','Security - 5643 readers')}
+            
         </div>
     )
 };

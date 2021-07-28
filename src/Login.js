@@ -52,7 +52,7 @@ const Login = () => {
     return (
         <div className='login'>
             <h1>You are not logged in</h1>
-            <img src='https://logos-world.net/wp-content/uploads/2020/04/Linkedin-Logo-2003-2011.png' alt='logo' />
+            <img src='https://logos-download.com/wp-content/uploads/2016/03/LinkedIn_Logo_2003.png' alt='logo' />
         
         <form>
             <input value={name} onChange={e => setName(e.target.value)} placeholder='Full name (Required if registering)' type='text' />

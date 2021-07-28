@@ -30,16 +30,16 @@ function Sidebar() {
                 </div> 
                 <div className="sidebar__stat">
                     <p>Views on post</p>
-                    <p className="sidebar__statNumber">4,532</p>  
+                    <p className="sidebar__statNumber">2,532</p>  
                 </div>
             </div>
             <div className="sidebar__bottom">
                 <p>Recent</p>
-                {recentItem('reactjs')}
-                {recentItem('programming')}
-                {recentItem('nodejs')}
-                {recentItem('software')}
-                {recentItem('design')}
+                {recentItem('React')}
+                {recentItem('Python')}
+                {recentItem('Express')}
+                {recentItem('Java')}
+                {recentItem('Flutter')}
             </div>
         </div>
     )
