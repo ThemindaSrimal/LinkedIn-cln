@@ -20,8 +20,8 @@ const Login = () => {
             dispatch(login({
                 email: userAuth.user.email,
                 uid: userAuth.user.uid,
-                displayName: userAuth.user.displayName,
-                profileUrl: userAuth.user.photoURL,
+                name: userAuth.user.displayName,
+                photoUrl: userAuth.user.photoURL,
             }))
         }).catch(error => alert(error));    
     };
@@ -41,8 +41,8 @@ const Login = () => {
                 dispatch(login({
                    email: userAuth.user.email,
                    uid: userAuth.user.uid,
-                   displayName: name,
-                   photoURL:  profilePic, 
+                   name: name,
+                   photoUrl:  profilePic, 
                 }));
             
             });

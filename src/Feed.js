@@ -36,10 +36,10 @@ function Feed() {
         e.preventDefault();
 
         db.collection('posts').add ({
-            name: user.name,
+            displayName: user.name,
             description: user.email,
             message: input,
-            photoUrl: user.photoUrl || '',
+            photoURL: user.photoUrl || '',
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         })
 
@@ -67,10 +67,10 @@ function Feed() {
 
             <FlipMove>
 
-                {posts.map(({id, data: {name, description, message, photoUrl}}) => (
+                {posts.map(({id, data: {displayName, description, message, photoUrl}}) => (
                     <Post 
                     key={id}
-                    name={name}
+                    name={displayName}
                     description={description}
                     message={message}
                     photoUrl={photoUrl}
