@@ -67,13 +67,13 @@ function Feed() {
 
             <FlipMove>
 
-                {posts.map(({id, data: {displayName, description, message, photoUrl}}) => (
+                {posts.map(({id, data: {displayName, description, message, photoURL}}) => (
                     <Post 
                     key={id}
                     name={displayName}
                     description={description}
                     message={message}
-                    photoUrl={photoUrl}
+                    photoUrl={photoURL}
                     />
                 ))}
 
