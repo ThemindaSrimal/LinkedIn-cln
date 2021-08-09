@@ -20,7 +20,7 @@ function Sidebar() {
             <div className="sidebar__top">
                 <img src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg" alt="" />
                 <Avatar src={user.photoUrl} className='sidebar__avatar'>{user.email[0]}</Avatar>
-                <h2>{user.displayName}</h2>
+                <h2>{user.name}</h2>
                 <h4>{user.email}</h4>
             </div>
             <div className="sidebar__stats">

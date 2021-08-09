@@ -36,7 +36,7 @@ function Feed() {
         e.preventDefault();
 
         db.collection('posts').add ({
-            name: user.displayName,
+            name: user.name,
             description: user.email,
             message: input,
             photoUrl: user.photoUrl || '',
