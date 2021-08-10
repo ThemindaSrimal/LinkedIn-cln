@@ -22,3 +22,9 @@
 .headerOption:hover {
   color: black;
 }
+
+@media (max-width: 800px) {
+  .headerOption__title {
+    display: none;
+  }
+}

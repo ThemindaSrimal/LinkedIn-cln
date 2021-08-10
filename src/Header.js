@@ -27,7 +27,7 @@ function Header() {
                 <img src="https://cdn.freelogovectors.net/wp-content/uploads/2020/01/linkedin-logo.png" alt="" />
 
                 <div className="header__search">
-                    <SearchIcon/>
+                    <SearchIcon />
                     <input type="text" placeholder="Search" />
                 </div>
             </div>

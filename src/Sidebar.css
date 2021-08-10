@@ -104,3 +104,11 @@
   margin-right: 10px;
   margin-left: 5px;
 }
+
+@media (max-width: 800px) {
+  .sidebar {
+    position: relative;
+    top: 0px;
+    margin-bottom: 20px;
+  }
+}
