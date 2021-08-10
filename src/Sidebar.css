@@ -107,6 +107,10 @@
   margin-left: 5px;
 }
 
+.showMore__button {
+  display: none;
+}
+
 @media (max-width: 870px) {
   .sidebar {
     position: relative;
@@ -118,5 +122,9 @@
 
   .sidebar__stat {
     margin: 0 2%;
+  }
+
+  .showMore__button {
+    display: block;
   }
 }

@@ -1,5 +1,5 @@
 import {Avatar} from '@material-ui/core';
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import './Sidebar.css'; 
@@ -7,6 +7,15 @@ import './Sidebar.css';
 function Sidebar() {
 
     const user = useSelector(selectUser); 
+
+    const [showClick,setShowClick] = useState(false);
+
+    const [matchs, setMatchs] = useState(window.matchMedia("(max-width: 870px)").matches)
+
+    useEffect(() => {
+        const handler = (e) => setMatchs( e.matches );
+        window.matchMedia("(max-width: 870px)").addListener(handler);
+    }, []);
 
     const recentItem = (topic) => (
         <div className="sidebar__recentItem">
@@ -23,24 +32,39 @@ function Sidebar() {
                 <h2>{user.name}</h2>
                 <h4>{user.email}</h4>
             </div>
-            <div className="sidebar__stats">
-                <div className="sidebar__stat">
-                    <p>Who viewed you</p>
-                    <p className="sidebar__statNumber">4,532</p> 
-                </div> 
-                <div className="sidebar__stat">
-                    <p>Views on post</p>
-                    <p className="sidebar__statNumber">2,532</p>  
-                </div>
+            <div className="showMore__button">
+                <button onClick={() => setShowClick(!showClick)} >
+                    Show more
+                </button>
             </div>
-            <div className="sidebar__bottom">
-                <p>Recent</p>
-                {recentItem('React')}
-                {recentItem('Python')}
-                {recentItem('Express')}
-                {recentItem('Java')}
-                {recentItem('Flutter')}
+
+            <div>
+                {(showClick || !matchs) && 
+                       <section>
+                            <div className="sidebar__stats">
+                                <div className="sidebar__stat">
+                                    <p>Who viewed you</p>
+                                    <p className="sidebar__statNumber">4,532</p> 
+                                </div> 
+                                <div className="sidebar__stat">
+                                    <p>Views on post</p>
+                                    <p className="sidebar__statNumber">2,532</p>  
+                                </div>
+                            </div>
+                            <div className="sidebar__bottom">
+                                <p>Recent</p>
+                                {recentItem('React')}
+                                {recentItem('Python')}
+                                {recentItem('Express')}
+                                {recentItem('Java')}
+                                {recentItem('Flutter')}
+                            </div>
+                        </section>
+                }
             </div>
+
+            
+            
         </div>
     )
 }
