@@ -3,6 +3,7 @@ import React, { useState, useEffect} from 'react';
 import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import './Sidebar.css'; 
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function Sidebar() {
 
@@ -33,9 +34,10 @@ function Sidebar() {
                 <h4>{user.email}</h4>
             </div>
             <div className="showMore__button">
-                <button onClick={() => setShowClick(!showClick)} >
-                    Show more
-                </button>
+                <button className="clickShow__button" onClick={() => setShowClick(!showClick)} >
+                    Show more 
+                    <ExpandMoreIcon className="expandMore__icon"/>
+                </button >
             </div>
 
             <div>
