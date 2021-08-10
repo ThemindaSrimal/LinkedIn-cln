@@ -1,10 +1,12 @@
 .sidebar {
   position: sticky;
   top: 80px;
-  flex: 0.2;
+  flex: 0.25;
   border-radius: 10px;
   text-align: center;
   height: fit-content;
+  margin-left: -30px;
+  margin-right: 10px;
 }
 
 .sidebar__avatar {
@@ -105,10 +107,16 @@
   margin-left: 5px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 870px) {
   .sidebar {
     position: relative;
     top: 0px;
     margin-bottom: 20px;
+    margin-left: 9%;
+    width: 80%;
+  }
+
+  .sidebar__stat {
+    margin: 0 2%;
   }
 }

@@ -1,5 +1,5 @@
 .feed {
-  flex: 0.5;
+  flex: 0.55;
   margin: 0 20px;
 }
 
@@ -45,10 +45,10 @@
   justify-content: space-evenly;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .feed {
-    flex: 100%;
-    margin: 0%;
-    margin-bottom: 20px;
+    margin: 0;
+    margin-bottom: 30px;
+    width: 100%;
   }
 }

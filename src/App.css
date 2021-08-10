@@ -12,9 +12,10 @@
   margin-top: 40px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 870px) {
   .app__body {
     display: flex;
     flex-direction: column;
+    align-items: stretch;
   }
 }
