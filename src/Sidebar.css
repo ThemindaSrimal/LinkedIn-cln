@@ -122,7 +122,6 @@
   display: flex;
   justify-content: center;
   font-weight: 600px;
-  color: rgb(75, 74, 74);
 }
 
 @media (max-width: 870px) {

@@ -18,20 +18,21 @@ function Feed() {
     const user = useSelector(selectUser);
     const [input,setInput] = useState('');
     const [posts, setPosts] = useState([]);
+    const [postEnd, setPostsEnd] = useState(7);
 
     useEffect(() => {
         db.collection('posts')
         .orderBy('timestamp','desc')
-        .onSnapshot((snapshot) => (
+        .onSnapshot((snapshot) => {
             setPosts(snapshot.docs.map(doc => (
                 {
                     id: doc.id,
                     data: doc.data(),
                 }
             )))
-        ))
+        })
     }, []);
-    
+
     const sendPost = e => {
         e.preventDefault();
 
@@ -46,6 +47,10 @@ function Feed() {
         setInput("");
 
     };
+
+    const showMore = () => {
+        setPostsEnd(postEnd+7)
+    }
     
     return (
         <div className='feed'>
@@ -67,7 +72,7 @@ function Feed() {
 
             <FlipMove>
 
-                {posts.map(({id, data: {displayName, description, message, photoURL}}) => (
+                {posts.slice(0,postEnd).map(({id, data: {displayName, description, message, photoURL}}) => (
                     <Post 
                     key={id}
                     name={displayName}
@@ -76,9 +81,12 @@ function Feed() {
                     photoUrl={photoURL}
                     />
                 ))}
-
+                
             </FlipMove>
-             
+
+            { !(postEnd >= posts.length) &&
+                <button className='showMore__button' onClick={showMore}>Show more results</button>
+            }
         </div> 
     );
 }
