@@ -16,7 +16,7 @@
 
 .header__left > img {
   object-fit: contain;
-  height: 50px;
+  height: 45px;
   margin-right: 10px;
   margin-top: -2px;
 }
@@ -28,7 +28,7 @@
   border-radius: 5px;
   color: gray;
   background-color: #eef3f8;
-  height: 25px;
+  height: 20px;
   width: 300px;
 }
 
@@ -46,12 +46,19 @@
   display: flex;
 }
 
-@media (max-width: 820px) {
-  .header__search {
-    display: none;
-  }
+.headerSole__serachIcon {
+  color: gray;
+  width: 30px;
+  height: 30px;
+}
 
+@media (max-width: 820px) {
   .header__left > img {
     margin-top: -10px;
+  }
+
+  .header__search {
+    margin-top: -5px;
+    height: 15px;
   }
 }
