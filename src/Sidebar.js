@@ -4,12 +4,14 @@ import { useSelector } from 'react-redux';
 import { selectUser } from './features/userSlice';
 import './Sidebar.css'; 
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ExpandLessIcon from '@material-ui/icons/ExpandLess';
 
 function Sidebar() {
 
     const user = useSelector(selectUser); 
 
     const [showClick,setShowClick] = useState(false);
+    const [expand,setExpand] = useState(false);
 
     const [matchs, setMatchs] = useState(window.matchMedia("(max-width: 870px)").matches)
 
@@ -33,39 +35,59 @@ function Sidebar() {
                 <h2>{user.name}</h2>
                 <h4>{user.email}</h4>
             </div>
-            <div className="showMore__button">
-                <button className="clickShow__button" onClick={() => setShowClick(!showClick)} >
-                    Show more 
-                    <ExpandMoreIcon className="expandMore__icon"/>
-                </button >
+
+            <div>
+                {!expand &&
+                    <div className="showMoreLess__button">
+                        <button className="clickShow__button" onClick={() => {
+                                setShowClick(!showClick)
+                                setExpand(!expand)
+                            }}>
+                            Show more 
+                            <ExpandMoreIcon className="expandMore__icon"/>
+                        </button >
+                    </div>
+                }
             </div>
 
             <div>
                 {(showClick || !matchs) && 
-                       <section>
-                            <div className="sidebar__stats">
-                                <div className="sidebar__stat">
-                                    <p>Who viewed you</p>
-                                    <p className="sidebar__statNumber">4,532</p> 
-                                </div> 
-                                <div className="sidebar__stat">
-                                    <p>Views on post</p>
-                                    <p className="sidebar__statNumber">2,532</p>  
-                                </div>
+                    <section>
+                        <div className="sidebar__stats">
+                            <div className="sidebar__stat">
+                                <p>Who viewed you</p>
+                                <p className="sidebar__statNumber">4,532</p> 
+                            </div> 
+                            <div className="sidebar__stat">
+                                <p>Views on post</p>
+                                <p className="sidebar__statNumber">2,532</p>  
                             </div>
-                            <div className="sidebar__bottom">
-                                <p>Recent</p>
-                                {recentItem('React')}
-                                {recentItem('Python')}
-                                {recentItem('Express')}
-                                {recentItem('Java')}
-                                {recentItem('Flutter')}
-                            </div>
-                        </section>
+                        </div>
+                        <div className="sidebar__bottom">
+                            <p>Recent</p>
+                            {recentItem('React')}
+                            {recentItem('Python')}
+                            {recentItem('Express')}
+                            {recentItem('Java')}
+                            {recentItem('Flutter')}
+                        </div>
+                    </section>
                 }
             </div>
 
-            
+            <div>
+                {expand &&
+                    <div className="showMoreLess__button">
+                        <button className="clickShow__button" onClick={() => {
+                                setShowClick(!showClick)
+                                setExpand(!expand)
+                            }}>
+                            Show less
+                            <ExpandLessIcon className="expandMoreLess__icon"/>
+                        </button >
+                    </div>
+                }
+            </div>
             
         </div>
     )

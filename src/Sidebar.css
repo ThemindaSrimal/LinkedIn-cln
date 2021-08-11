@@ -107,7 +107,7 @@
   margin-left: 5px;
 }
 
-.showMore__button {
+.showMoreLess__button {
   display: none;
   margin: 10px 0;
 }
@@ -119,7 +119,6 @@
   font-size: 15px;
   height: 22px;
   cursor: pointer;
-  background-color: rgba(218, 211, 211, 0.829);
   display: flex;
   justify-content: center;
   font-weight: 600px;
@@ -139,7 +138,11 @@
     margin: 0 2%;
   }
 
-  .showMore__button {
+  .showMoreLess__button {
     display: block;
+  }
+
+  .clickShow__button:hover {
+    background-color: rgba(218, 211, 211, 0.829);
   }
 }
